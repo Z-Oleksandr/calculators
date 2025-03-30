@@ -2,5 +2,6 @@ services:
     calculators:
         build:
             context: .
-        ports: "3032:3032"
+        ports:
+            - "3032:3032"
         restart: unless-stopped
