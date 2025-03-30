@@ -80,6 +80,7 @@ main {
     width: 20vw;
     min-width: 200px;
     height: 5vh;
+    min-height: 25px;
     margin: 10px;
     font-size: var(--font-size-sm);
 }
