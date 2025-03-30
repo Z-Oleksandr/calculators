@@ -1,0 +1,28 @@
+{
+    "name": "calculators",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon app.js",
+        "build": "webpack --mode production",
+        "build_dev": "webpack --mode development --watch"
+    },
+    "author": "seraphim",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "compression": "^1.8.0",
+        "cookie-parser": "^1.4.7",
+        "dotenv": "^16.4.7",
+        "ejs": "^3.1.10",
+        "express": "^4.21.2",
+        "express-ejs-layouts": "^2.5.1",
+        "helmet": "^8.1.0"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.9",
+        "webpack": "^5.98.0",
+        "webpack-cli": "^6.0.1"
+    }
+}

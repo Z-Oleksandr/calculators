@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;700;900&display=swap");
+
+:root {
+    --main-text-color: #04074f;
+    --background-blue: #5fb8d8;
+    --sections-red: rgba(160, 61, 11, 0.5);
+
+    --font-size-base: 1rem;
+    --font-size-sm: clamp(1.1rem, 0.3vw + 0.69rem, 0.95rem);
+    --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+    --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+    --font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+}
+
+html,
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--main-text-color);
+    font-size: var(--font-size-base);
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    max-width: 100%;
+    background-image: url("/img/backEgg2.jpg");
+    background-color: var(--background-blue);
+    background-repeat: repeat;
+    background-size: cover;
+}
+
+@media (max-width: 1000px) {
+    html,
+    body {
+        background-size: auto;
+        background-repeat: no-repeat;
+    }
+}
+
+a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    cursor: url("/img/eggsYcursor.png") 13 2, auto;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.superContainer {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.indexCont {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.input {
+    padding: 10px;
+}
+
+.input form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-md);
+}
+
+#calculate_eggs input {
+    width: 20vw;
+    min-width: 200px;
+    height: 5vh;
+    margin: 10px;
+    font-size: var(--font-size-sm);
+}
+
+.outputCont {
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    height: 12vh;
+}
+
+.highlight {
+    text-decoration: underline;
+}
+
+.mainText {
+    font-size: var(--font-size-md);
+    font-weight: 600;
+    max-width: 80vw;
+    padding: 10px;
+    text-align: center;
+}
+
+.mainText a {
+    color: white;
+    text-decoration: underline;
+}
+
+.withBackground {
+    background-color: rgba(75, 6, 150, 0.3);
+    border-radius: 7px;
+}

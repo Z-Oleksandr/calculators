@@ -1,0 +1,24 @@
+<div class="indexCont">
+    <div class="input">
+        <form id="calculate_eggs">
+            <label for="start">Set the beginning of the counting period</label>
+            <input type="date" name="start" id="startDate" required />
+
+            <label for="end">Set the end of the counting period</label>
+            <input type="date" name="end" id="endDate" />
+
+            <label for="eggDaily">How many eggs a day do you consume?</label>
+            <input
+                type="number"
+                min="0"
+                name="eggDaily"
+                id="eggDaily"
+                value="0"
+                required
+            />
+
+            <input type="submit" value="Submit" />
+        </form>
+    </div>
+    <div id="outputEgg" class="outputCont"></div>
+</div>

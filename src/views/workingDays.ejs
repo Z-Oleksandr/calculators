@@ -1,0 +1,54 @@
+<div class="indexCont">
+    <div class="inputWork">
+        <form id="calculate_workDays">
+            <div id="topSplitter">
+                <div id="timePeriod" class="splitCont">
+                    <label for="start"
+                        >Set the beginning of the counting period</label
+                    >
+                    <input type="date" name="start" id="startDate" required />
+
+                    <label for="end">Set the end of the counting period</label>
+                    <input type="date" name="end" id="endDate" />
+
+                    <label for="hoursDaily">Set your daily hours</label>
+                    <input
+                        type="number"
+                        min="0"
+                        max="24"
+                        value="8"
+                        name="hoursDaily"
+                        id="hoursDaily"
+                    />
+                </div>
+                <div id="workDays" class="splitCont">
+                    <label>Which days do you work?</label>
+
+                    <div id="workDaysTable">
+                        <label for="Monday">Monday</label>
+                        <input type="checkbox" name="Monday" id="Monday" />
+                        <label for="Tuesday">Tuesday</label>
+                        <input type="checkbox" name="Tuesday" id="Tuesday" />
+                        <label for="Wednesday">Wednesday</label>
+                        <input
+                            type="checkbox"
+                            name="Wednesday"
+                            id="Wednesday"
+                        />
+                        <label for="Thursday">Thursday</label>
+                        <input type="checkbox" name="Thursday" id="Thursday" />
+                        <label for="Friday">Friday</label>
+                        <input type="checkbox" name="Friday" id="Friday" />
+                        <label for="Saturday">Saturday</label>
+                        <input type="checkbox" name="Saturday" id="Saturday" />
+                        <label for="Sunday">Sunday</label>
+                        <input type="checkbox" name="Sunday" id="Sunday" />
+                    </div>
+                </div>
+            </div>
+
+            <input type="submit" value="Submit" id="workSubmit" />
+        </form>
+    </div>
+    <div id="outputWork" class="outputCont"></div>
+</div>

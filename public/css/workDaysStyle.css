@@ -1,0 +1,76 @@
+.inputWork {
+    padding: 10px;
+}
+
+#calculate_workDays {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#timePeriod input,
+#workSubmit {
+    width: 20vw;
+    min-width: 200px;
+    height: 5vh;
+    margin: 10px;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+}
+
+#workDaysTable {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px 10px;
+    align-items: center;
+}
+
+@media (min-width: 769px) {
+    #topSplitter {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media (max-width: 769px) {
+    #topSplitter {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.splitCont {
+    width: 25vw;
+    min-width: 300px;
+    height: 40vh;
+    min-height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: var(--font-size-md);
+}
+
+#workDaysTable {
+    font-size: var(--font-size-sm);
+}
+
+#workDaysTable input {
+    width: 5vw;
+    height: 3vh;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: var(--font-size-sm);
+    cursor: pointer;
+}
+
+#timePeriod label,
+#workDaysTable label,
+#workDays label {
+    text-align: center;
+}
