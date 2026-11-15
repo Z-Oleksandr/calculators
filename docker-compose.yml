@@ -1,27 +1,28 @@
 services:
-    calculators:
-        build:
-            context: .
-        image: calculators:latest
-        init: true
-        ports:
-            - "3032:3032"
-        environment:
-            NODE_ENV: production
-            PORT: 3032
-        restart: unless-stopped
-        read_only: true
-        tmpfs:
-            - /tmp:size=16m,mode=1777
-        cap_drop:
-            - ALL
-        security_opt:
-            - no-new-privileges:true
-        mem_limit: 256m
-        cpus: 0.5
-        pids_limit: 64
-        logging:
-            driver: json-file
-            options:
-                max-size: 10m
-                max-file: "3"
+  calculators:
+    build:
+      context: .
+    image: calculators:latest
+    init: true
+    ports:
+      - "3032:3032"
+    environment:
+      NODE_ENV: production
+      PORT: 3032
+      SITE_URL: ${SITE_URL:-}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=16m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 256m
+    cpus: 0.5
+    pids_limit: 64
+    logging:
+      driver: json-file
+      options:
+        max-size: 10m
+        max-file: "3"

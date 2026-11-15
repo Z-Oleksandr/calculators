@@ -1,10 +1,14 @@
 .git
+.github
 .gitignore
 .dockerignore
 .env
 .env.*
 node_modules
 dist
+coverage
+test
 npm-debug.log*
 Dockerfile
 docker-compose.yml
+*.md
