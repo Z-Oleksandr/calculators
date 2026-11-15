@@ -42,6 +42,6 @@ export function hensNeeded(eggsPerDay) {
 export function lifetimeEggs(eggsPerDay, ageYears) {
     if (ageYears == null || ageYears >= LIFE_EXPECTANCY_YEARS) return null;
     return Math.round(
-        eggsPerDay * (LIFE_EXPECTANCY_YEARS - ageYears) * DAYS_PER_YEAR
+        eggsPerDay * (LIFE_EXPECTANCY_YEARS - ageYears) * DAYS_PER_YEAR,
     );
 }

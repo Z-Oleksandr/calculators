@@ -46,7 +46,10 @@ test("countWeekdays matches a brute-force count", () => {
             for (let x = start; x <= start + len; x++) {
                 if (days.includes(dates.weekday(x))) expected++;
             }
-            assert.equal(dates.countWeekdays(start, start + len, days), expected);
+            assert.equal(
+                dates.countWeekdays(start, start + len, days),
+                expected,
+            );
         }
     }
     assert.equal(dates.countWeekdays(10, 5, [1]), 0);
@@ -60,9 +63,10 @@ test("countDaysOnWeekdays dedupes and respects range", () => {
 });
 
 test("yearsInRange", () => {
-    assert.deepEqual(dates.yearsInRange(d("2025-12-31"), d("2027-01-01")), [
-        2025, 2026, 2027,
-    ]);
+    assert.deepEqual(
+        dates.yearsInRange(d("2025-12-31"), d("2027-01-01")),
+        [2025, 2026, 2027],
+    );
 });
 
 test("addMonths clamps to month end", () => {
@@ -96,15 +100,15 @@ test("calendarDiff borrows months correctly", () => {
 test("nextAnniversary handles leap birthdays", () => {
     assert.equal(
         dates.nextAnniversary(d("2000-02-29"), d("2026-01-01")),
-        d("2026-02-28")
+        d("2026-02-28"),
     );
     assert.equal(
         dates.nextAnniversary(d("2000-05-20"), d("2026-05-20")),
-        d("2026-05-20")
+        d("2026-05-20"),
     );
     assert.equal(
         dates.nextAnniversary(d("2000-05-20"), d("2026-05-21")),
-        d("2027-05-20")
+        d("2027-05-20"),
     );
 });
 
@@ -127,13 +131,23 @@ test("boil times are sensible and ordered", () => {
     assert.ok(soft > 240 && soft < 360, `soft=${soft}`);
     assert.ok(soft < medium && medium < hard);
     assert.ok(
-        timer.boilSeconds({ ...base, doneness: "soft", start: "room" }) < soft
+        timer.boilSeconds({ ...base, doneness: "soft", start: "room" }) < soft,
     );
-    assert.ok(timer.boilSeconds({ ...base, doneness: "soft", altitude: 2000 }) > soft);
-    assert.ok(timer.boilSeconds({ ...base, doneness: "hard", altitude: 5000 }) > hard);
-    assert.equal(timer.boilSeconds({ ...base, doneness: "hard", altitude: 5001 }), null);
+    assert.ok(
+        timer.boilSeconds({ ...base, doneness: "soft", altitude: 2000 }) > soft,
+    );
+    assert.ok(
+        timer.boilSeconds({ ...base, doneness: "hard", altitude: 5000 }) > hard,
+    );
+    assert.equal(
+        timer.boilSeconds({ ...base, doneness: "hard", altitude: 5001 }),
+        null,
+    );
     assert.equal(timer.boilSeconds({ ...base, doneness: "nope" }), null);
-    assert.equal(timer.boilSeconds({ ...base, doneness: "soft", altitude: -1 }), null);
+    assert.equal(
+        timer.boilSeconds({ ...base, doneness: "soft", altitude: -1 }),
+        null,
+    );
     assert.equal(timer.formatClock(425), "7:05");
     assert.equal(timer.formatClock(-3), "0:00");
 });
@@ -143,10 +157,18 @@ test("splitBill works in cents", () => {
     assert.equal(r.total, 11000);
     assert.equal(r.share, 3667);
     assert.equal(r.extra, 1);
-    const up = money.splitBill({ amount: 100, tipPercent: 10, people: 3, roundUp: true });
+    const up = money.splitBill({
+        amount: 100,
+        tipPercent: 10,
+        people: 3,
+        roundUp: true,
+    });
     assert.equal(up.share, 3700);
     assert.equal(up.extra, 100);
-    assert.equal(money.splitBill({ amount: 0.1, tipPercent: 0, people: 1 }).total, 10);
+    assert.equal(
+        money.splitBill({ amount: 0.1, tipPercent: 0, people: 1 }).total,
+        10,
+    );
 });
 
 test("comparePizzas finds the best value", () => {

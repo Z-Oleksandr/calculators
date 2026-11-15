@@ -23,7 +23,11 @@ export function boilSeconds({ size, start, doneness, altitude = 0 }) {
     const tEgg = START_TEMPS[start];
     const tYolk = DONENESS[doneness];
     if (!mass || tEgg === undefined || !tYolk) return null;
-    if (!Number.isFinite(altitude) || altitude < 0 || altitude > MAX_ALTITUDE_M) {
+    if (
+        !Number.isFinite(altitude) ||
+        altitude < 0 ||
+        altitude > MAX_ALTITUDE_M
+    ) {
         return null;
     }
     const tWater = boilingPoint(altitude);

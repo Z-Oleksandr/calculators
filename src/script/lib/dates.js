@@ -137,7 +137,11 @@ export function nextAnniversary(birth, from) {
     const { month, day } = toParts(birth);
     const { year } = toParts(from);
     for (const y of [year, year + 1]) {
-        const candidate = fromParts(y, month, Math.min(day, daysInMonth(y, month)));
+        const candidate = fromParts(
+            y,
+            month,
+            Math.min(day, daysInMonth(y, month)),
+        );
         if (candidate >= from) return candidate;
     }
     return null;
