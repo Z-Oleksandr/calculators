@@ -1,5 +1,7 @@
 "use strict";
 
+const crypto = require("node:crypto");
+const fs = require("node:fs");
 const path = require("node:path");
 const express = require("express");
 const expressLayout = require("express-ejs-layouts");
@@ -41,6 +43,33 @@ const PERMISSIONS_POLICY = [
     "usb=()",
     "interest-cohort=()",
 ].join(", ");
+
+const VERSIONED_ASSETS = {
+    "/main.js": "dist/main.js",
+    "/css/style.css": "public/css/style.css",
+    "/js/theme.js": "public/js/theme.js",
+};
+
+/**
+ * Maps asset URLs to URLs carrying a content hash, so they can be cached for a
+ * long time and still change immediately after a deploy.
+ */
+function versionAssets() {
+    return Object.fromEntries(
+        Object.entries(VERSIONED_ASSETS).map(([url, file]) => {
+            try {
+                const hash = crypto
+                    .createHash("sha256")
+                    .update(fs.readFileSync(path.join(ROOT, file)))
+                    .digest("hex")
+                    .slice(0, 12);
+                return [url, `${url}?v=${hash}`];
+            } catch {
+                return [url, url];
+            }
+        }),
+    );
+}
 
 function normaliseSiteUrl(value) {
     if (!value) return null;
@@ -94,6 +123,7 @@ function createApp({
     holidayService = createHolidayService(),
 } = {}) {
     const origin = normaliseSiteUrl(siteUrl);
+    const assets = versionAssets();
     const app = express();
 
     app.disable("x-powered-by");
@@ -116,7 +146,7 @@ function createApp({
     app.use(compression());
 
     const staticOptions = {
-        maxAge: production ? "7d" : 0,
+        maxAge: production ? "30d" : 0,
         index: false,
         redirect: false,
     };
@@ -200,6 +230,7 @@ function createApp({
             }));
             const locals = {
                 t,
+                assets,
                 locale,
                 page: page.key,
                 nav,

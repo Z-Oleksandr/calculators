@@ -182,6 +182,16 @@ describe("http app", () => {
         }
     });
 
+    test("assets are referenced with a content hash", async () => {
+        const html = await (await fetch(`${base}/`)).text();
+        const match = html.match(/href="(\/css\/style\.css\?v=[0-9a-f]{12})"/);
+        assert.ok(match, "versioned stylesheet link");
+        assert.match(html, /src="\/js\/theme\.js\?v=[0-9a-f]{12}"/);
+        const res = await fetch(base + match[1]);
+        assert.equal(res.status, 200);
+        assert.match(res.headers.get("cache-control"), /max-age=2592000/);
+    });
+
     test("security headers are set", async () => {
         const res = await fetch(`${base}/`);
         const csp = res.headers.get("content-security-policy");

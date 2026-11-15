@@ -23,9 +23,9 @@
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" type="image/png" href="/img/eggsW.png" />
         <link rel="preload" href="/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
-        <link rel="stylesheet" href="/css/style.css" />
-        <script src="/js/theme.js"></script>
-        <script type="module" src="/main.js"></script>
+        <link rel="stylesheet" href="<%= assets["/css/style.css"] %>" />
+        <script src="<%= assets["/js/theme.js"] %>"></script>
+        <script type="module" src="<%= assets["/main.js"] %>"></script>
     </head>
     <body data-page="<%= page %>">
         <a class="skip-link" href="#main"><%= t("nav.skip") %></a>
