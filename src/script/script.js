@@ -29,6 +29,20 @@ function getDaysBetween(startDate, endDate) {
     return differenceInDays;
 }
 
+// Safe DOM builders (no innerHTML)
+function paragraph(...parts) {
+    const p = document.createElement("p");
+    p.append(...parts);
+    return p;
+}
+
+function highlight(value) {
+    const span = document.createElement("span");
+    span.className = "highlight";
+    span.textContent = String(value);
+    return span;
+}
+
 // Eggs
 const eggForm = document.getElementById("calculate_eggs");
 const outputEgg = document.getElementById("outputEgg");
@@ -42,7 +56,7 @@ if (eggForm) {
         const eggDaily = document.getElementById("eggDaily").value;
 
         if (endDate < startDate) {
-            outputEgg.innerHTML = "";
+            outputEgg.replaceChildren();
             outputEgg.style.display = "flex";
             outputEgg.innerText = "End date must be after the start date.";
             return;
@@ -51,13 +65,14 @@ if (eggForm) {
         const daysBetween = getDaysBetween(startDate, endDate);
         const eggsBetween = daysBetween * eggDaily;
 
-        outputEgg.innerHTML = "";
+        outputEgg.replaceChildren(
+            paragraph(
+                `In ${daysBetween} days you have consumed `,
+                highlight(eggsBetween),
+                " eggs."
+            )
+        );
         outputEgg.style.display = "flex";
-        const outputText = document.createElement("p");
-        outputText.innerHTML = `
-            In ${daysBetween} days you have consumed <span class="highlight">${eggsBetween}</span> eggs.
-        `;
-        outputEgg.appendChild(outputText);
     });
 }
 
@@ -72,7 +87,7 @@ if (workDaysForm) {
         const endDate = new Date(document.getElementById("endDate").value);
 
         if (endDate < startDate) {
-            outputWork.innerHTML = "";
+            outputWork.replaceChildren();
             outputWork.style.display = "flex";
             outputWork.innerText = "End date must be after the start date.";
             return;
@@ -81,7 +96,7 @@ if (workDaysForm) {
         const workDays = getSelectedWorkDays();
 
         if (workDays.length === 0) {
-            outputWork.innerHTML = "";
+            outputWork.replaceChildren();
             outputWork.style.display = "flex";
             outputWork.innerText = "Seems like you did not work at all!";
             return;
@@ -96,14 +111,18 @@ if (workDaysForm) {
         const dailyHours = hoursInput ? parseInt(hoursInput.value, 10) : 0;
         const hours = dailyHours * totalWorkedDays;
 
-        outputWork.innerHTML = "";
+        // Wrapper keeps both lines stacked inside the flex container.
+        const result = document.createElement("div");
+        result.append(
+            paragraph(
+                "In this time period you have worked ",
+                highlight(totalWorkedDays),
+                " days."
+            ),
+            paragraph(`A total of ${hours} hours.`)
+        );
+        outputWork.replaceChildren(result);
         outputWork.style.display = "flex";
-        const outputText = document.createElement("p");
-        outputText.innerHTML = `
-            <p>In this time period you have worked <span class="highlight">${totalWorkedDays}</span> days.</p>
-            <p>A total of ${hours} hours.</p>
-        `;
-        outputWork.appendChild(outputText);
     });
 }
 
