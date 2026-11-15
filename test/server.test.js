@@ -9,6 +9,7 @@ const {
     createHolidayService,
     HolidayError,
 } = require("../src/server/holidays");
+const { fakeUpstream } = require("./helpers/upstream");
 
 function shape(node, prefix = "") {
     if (node === null || typeof node !== "object") return [prefix];
@@ -51,55 +52,6 @@ test("plural messages cover every plural category of their locale", () => {
         }
     }
 });
-
-function jsonResponse(status, body) {
-    return new Response(status === 204 ? null : JSON.stringify(body), {
-        status,
-        headers: { "content-type": "application/json" },
-    });
-}
-
-function fakeUpstream() {
-    const calls = [];
-    const fetchImpl = async (url) => {
-        calls.push(url);
-        if (url.endsWith("/AvailableCountries")) {
-            return jsonResponse(200, [
-                { countryCode: "DE", name: "Germany" },
-                { countryCode: "UA", name: "Ukraine" },
-                { countryCode: "bad", name: "x" },
-            ]);
-        }
-        if (url.includes("/PublicHolidays/2026/DE")) {
-            return jsonResponse(200, [
-                {
-                    date: "2026-01-01",
-                    name: "New Year",
-                    localName: "Neujahr",
-                    counties: null,
-                    types: ["Public"],
-                },
-                {
-                    date: "2026-01-06",
-                    name: "Epiphany",
-                    localName: "Heilige Drei Könige",
-                    counties: ["DE-BY", "<script>"],
-                    types: ["Public"],
-                },
-                {
-                    date: "2026-02-14",
-                    name: "Bank",
-                    localName: "Bank",
-                    counties: null,
-                    types: ["Bank"],
-                },
-                { date: "nope", name: "Broken", types: ["Public"] },
-            ]);
-        }
-        return jsonResponse(204);
-    };
-    return { calls, fetchImpl };
-}
 
 describe("holiday service", () => {
     test("validates, sanitises and caches", async () => {

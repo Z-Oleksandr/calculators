@@ -22,13 +22,30 @@ function safeStorage(action) {
     }
 }
 
-/** Non-empty form values as URLSearchParams. */
+function isDefault(element) {
+    if (!(element instanceof HTMLInputElement)) return false;
+    if (element.type === "checkbox" || element.type === "radio") return false;
+    return element.value === element.defaultValue;
+}
+
+/**
+ * Form values as URLSearchParams. Empty values and text/number inputs still
+ * at their default are left out to keep shared links short; restoring falls
+ * back to the same defaults.
+ */
 export function serialize(form) {
     const params = new URLSearchParams();
-    for (const [name, value] of new FormData(form)) {
-        if (typeof value === "string" && value.trim() !== "") {
-            params.append(name, value);
+    for (const element of form.elements) {
+        const { name } = element;
+        if (!name || element.disabled || isDefault(element)) continue;
+        if (
+            (element.type === "checkbox" || element.type === "radio") &&
+            !element.checked
+        ) {
+            continue;
         }
+        const value = element.value.trim();
+        if (value !== "") params.append(name, value);
     }
     return params;
 }
