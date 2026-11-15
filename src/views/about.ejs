@@ -1,12 +1,14 @@
-<div class="indexCont withBackground">
-    <div class="mainText">
-        <p>
-            Hey! Thanks for visiting the egg calculator website. It is a trinket
-            project. How many eggs did you eat?
-        </p>
-        <p>
-            Check out my main website -
-            <a href="https://theblog.sbmedia.cloud">theBlog</a>!
-        </p>
-    </div>
-</div>
+<section class="card prose">
+    <h1><%= t("pages.about.heading") %></h1>
+    <p><%= t("pages.about.intro") %></p>
+    <ul class="link-list">
+        <% nav.filter((item) => item.key !== "about").forEach((item) => { %>
+        <li><a href="<%= item.href %>"><%= item.label %></a></li>
+        <% }) %>
+    </ul>
+    <p><%= t("pages.about.privacy") %></p>
+    <p>
+        <%= t("pages.about.blog") %>
+        <a href="https://theblog.sbmedia.cloud" rel="noopener">theBlog</a>
+    </p>
+</section>

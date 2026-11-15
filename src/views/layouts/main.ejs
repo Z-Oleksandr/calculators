@@ -1,21 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<%= locale %>">
     <head>
         <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title><%= locals.title %></title>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="color-scheme" content="light dark" />
+        <title><%= title %> · <%= t("meta.siteName") %></title>
+        <meta name="description" content="<%= description %>" />
+        <% if (canonical) { %>
+        <link rel="canonical" href="<%= canonical %>" />
+        <% alternates.forEach((alt) => { %>
+        <link rel="alternate" hreflang="<%= alt.locale %>" href="<%= origin %><%= alt.href %>" />
+        <% }) %>
+        <link rel="alternate" hreflang="x-default" href="<%= defaultHref %>" />
+        <meta property="og:url" content="<%= canonical %>" />
+        <meta property="og:image" content="<%= origin %>/img/og.jpg" />
+        <% } %>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="<%= t("meta.siteName") %>" />
+        <meta property="og:title" content="<%= title %>" />
+        <meta property="og:description" content="<%= description %>" />
+        <meta property="og:locale" content="<%= locale %>" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <link rel="icon" type="image/png" href="/img/eggsW.png" />
+        <link rel="preload" href="/fonts/poppins-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
         <link rel="stylesheet" href="/css/style.css" />
-        <link rel="stylesheet" href="/css/headerFooterStyle.css" />
-        <link rel="stylesheet" href="/css/workDaysStyle.css" />
-        <link rel="icon" type="image/x-icon" href="/img/eggsW.png" />
+        <script src="/js/theme.js"></script>
         <script type="module" src="/main.js"></script>
     </head>
-    <body>
-        <div class="superContainer">
-            <%- include('../partials/header.ejs') %>
-            <main><%- body %></main>
-            <%- include('../partials/footer.ejs') %>
-        </div>
+    <body data-page="<%= page %>">
+        <a class="skip-link" href="#main"><%= t("nav.skip") %></a>
+        <%- include("../partials/header") %>
+        <main id="main" tabindex="-1"><%- body %></main>
+        <%- include("../partials/footer") %>
+        <script type="application/json" id="i18n"><%- clientMessages %></script>
     </body>
 </html>
