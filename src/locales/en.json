@@ -172,7 +172,7 @@
         "eggs": {
             "result": "In {days} you have eaten {eggs}.",
             "weight": "That's {kg} kg of egg, with {protein} kg of protein and {kcal} kcal.",
-            "cartons": "That's {cartons} of ten.",
+            "cartons": "You'd need at least {cartons} of ten for that.",
             "stack": "Stacked on top of each other, they would be {metres} m tall.",
             "cost": "They cost you {cost}.",
             "hens": "To keep up with you it takes {hens}, laying all year.",

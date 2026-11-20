@@ -116,7 +116,7 @@ test("egg stats", () => {
     const s = eggs.eggStats(100, 0.3);
     assert.equal(s.massKg, 5.8);
     assert.equal(s.cartons, 10);
-    assert.equal(eggs.eggStats(14).cartons, 1.4);
+    assert.equal(eggs.eggStats(14).cartons, 2);
     assert.ok(Math.abs(s.cost - 30) < 1e-9);
     assert.equal(eggs.eggStats(5).cost, null);
     assert.equal(eggs.hensNeeded(2), (2 * 365) / 300);

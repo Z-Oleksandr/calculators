@@ -172,7 +172,7 @@
         "eggs": {
             "result": "In {days} hast du {eggs} gegessen.",
             "weight": "Das sind {kg} kg Ei, mit {protein} kg Eiweiß und {kcal} kcal.",
-            "cartons": "Das sind {cartons} à zehn Stück.",
+            "cartons": "Dafür bräuchtest du mindestens {cartons} à zehn Stück.",
             "stack": "Übereinander gestapelt wären sie {metres} m hoch.",
             "cost": "Sie haben dich {cost} gekostet.",
             "hens": "Um mit dir mitzuhalten, braucht es {hens}, die das ganze Jahr legen.",

@@ -28,7 +28,7 @@ export function compute(form) {
             kcal: highlight(number(stats.kcal, 0)),
         }),
         message("eggs.cartons", {
-            cartons: unit("units.cartons", stats.cartons, 1),
+            cartons: unit("units.cartons", stats.cartons),
         }),
         message("eggs.stack", {
             metres: highlight(number(stats.stackMetres, 1)),

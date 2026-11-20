@@ -79,9 +79,15 @@ test("egg calculator counts both ends of the period", async () => {
     );
     assert.match(page.output(), /In 10 days you have eaten 20 eggs\./);
     assert.match(page.output(), /They cost you 6\.00\./);
-    assert.match(page.output(), /That's 2 cartons of ten\./);
+    assert.match(
+        page.output(),
+        /You'd need at least 2 cartons of ten for that\./,
+    );
     const few = await open("/?start=2026-11-01&end=2026-11-07&eggs=2");
-    assert.match(few.output(), /That's 1\.4 cartons of ten\./);
+    assert.match(
+        few.output(),
+        /You'd need at least 2 cartons of ten for that\./,
+    );
     assert.match(
         few.output(),
         /Stacked on top of each other, they would be 0\.8 m tall\./,
