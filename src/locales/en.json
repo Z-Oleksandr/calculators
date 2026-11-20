@@ -112,7 +112,7 @@
             "title": "About",
             "description": "About the egg calculator website.",
             "heading": "About",
-            "intro": "Hey! Thanks for visiting the egg calculator website. It started as a trinket project for counting eggs and grew into a small collection of everyday calculators.",
+            "intro": "Hey! Thanks for visiting the egg calculator website. It started as a practice website for learning to code and counting eggs. At some point, it turned into a small collection of everyday calculators. What can't you find on the web, am I right?",
             "privacy": "No cookies, no tracking, no accounts. Everything is calculated in your browser, and your last inputs are only remembered on your own device. Public holidays come from the free Nager.Date API through this server, so your address is never shared with anyone else.",
             "blog": "Check out my main website:"
         }

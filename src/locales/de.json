@@ -112,7 +112,7 @@
             "title": "Über",
             "description": "Über die Eierrechner-Website.",
             "heading": "Über diese Seite",
-            "intro": "Hallo! Danke für deinen Besuch auf der Eierrechner-Website. Sie begann als kleines Bastelprojekt zum Eierzählen und ist zu einer kleinen Sammlung von Alltagsrechnern gewachsen.",
+            "intro": "Hallo! Danke für deinen Besuch auf der Eierrechner-Website. Sie begann als Übungsprojekt, um Programmieren zu lernen und Eier zu zählen. Irgendwann wurde daraus eine kleine Sammlung von Alltagsrechnern. Was man nicht alles im Netz findet, oder?",
             "privacy": "Keine Cookies, kein Tracking, keine Konten. Alles wird in deinem Browser berechnet, und deine letzten Eingaben werden nur auf deinem eigenen Gerät gespeichert. Feiertage stammen von der kostenlosen Nager.Date-API und werden über diesen Server abgerufen, sodass deine Adresse an niemanden sonst weitergegeben wird.",
             "blog": "Schau dir auch meine Hauptseite an:"
         }
