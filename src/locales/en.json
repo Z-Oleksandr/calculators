@@ -172,8 +172,8 @@
         "eggs": {
             "result": "In {days} you have eaten {eggs}.",
             "weight": "That's {kg} kg of egg, with {protein} kg of protein and {kcal} kcal.",
-            "cartons": "Enough to fill {cartons} of ten.",
-            "stack": "Stood end to end they would reach {metres} m.",
+            "cartons": "That's {cartons} of ten.",
+            "stack": "Stacked on top of each other, they would be {metres} m tall.",
             "cost": "They cost you {cost}.",
             "hens": "To keep up with you it takes {hens}, laying all year.",
             "lifetime": "At this rate you will eat another {eggs} by the age of 80."

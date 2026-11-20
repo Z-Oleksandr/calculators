@@ -172,8 +172,8 @@
         "eggs": {
             "result": "In {days} hast du {eggs} gegessen.",
             "weight": "Das sind {kg} kg Ei, mit {protein} kg Eiweiß und {kcal} kcal.",
-            "cartons": "Genug für {cartons} à zehn Stück.",
-            "stack": "Aufrecht hintereinander gestellt reichen sie {metres} m weit.",
+            "cartons": "Das sind {cartons} à zehn Stück.",
+            "stack": "Übereinander gestapelt wären sie {metres} m hoch.",
             "cost": "Sie haben dich {cost} gekostet.",
             "hens": "Um mit dir mitzuhalten, braucht es {hens}, die das ganze Jahr legen.",
             "lifetime": "Bei diesem Tempo isst du bis zum Alter von 80 noch {eggs}."

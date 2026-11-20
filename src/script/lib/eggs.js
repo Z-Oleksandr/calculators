@@ -24,7 +24,7 @@ export function eggStats(count, pricePerEgg = null) {
         massKg: (count * EGG.massGrams) / 1000,
         proteinKg: (count * EGG.proteinGrams) / 1000,
         kcal: count * EGG.kcal,
-        cartons: Math.ceil(count / EGG.cartonSize),
+        cartons: count / EGG.cartonSize,
         stackMetres: (count * EGG.lengthCm) / 100,
         cost: pricePerEgg == null ? null : count * pricePerEgg,
     };
