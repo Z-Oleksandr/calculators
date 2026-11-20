@@ -1,0 +1,18 @@
+<section class="card">
+    <h1><%= t("pages.countdown.heading") %></h1>
+    <form id="calc" class="calc">
+        <div class="field-row">
+            <div class="field">
+                <label for="target"><%= t("pages.countdown.target") %></label>
+                <input type="date" id="target" name="target" required />
+            </div>
+            <div class="field">
+                <label for="event"><%= t("pages.countdown.event") %> <%- include("partials/optional") %></label>
+                <input type="text" id="event" name="event" maxlength="60" autocomplete="off" placeholder="<%= t("pages.countdown.eventPlaceholder") %>" />
+            </div>
+        </div>
+        <%- include("partials/holidays") %>
+        <button type="submit" class="btn"><%= t("common.calculate") %></button>
+    </form>
+    <%- include("partials/result") %>
+</section>

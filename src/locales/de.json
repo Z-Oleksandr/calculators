@@ -1,0 +1,226 @@
+{
+    "meta": {
+        "languageName": "Deutsch",
+        "siteName": "eggs#"
+    },
+    "nav": {
+        "main": "Hauptnavigation",
+        "menu": "Menü",
+        "skip": "Zum Inhalt springen",
+        "language": "Sprache",
+        "theme": "Dunkelmodus umschalten",
+        "eggs": "Eier",
+        "work": "Arbeitstage",
+        "timer": "Eieruhr",
+        "age": "Alter",
+        "countdown": "Countdown",
+        "pizza": "Pizza",
+        "split": "Rechnung teilen",
+        "about": "Über"
+    },
+    "footer": "© {year} Eine Website zum Eierzählen • von Seraphim",
+    "common": {
+        "start": "Beginn des Zeitraums",
+        "end": "Ende des Zeitraums",
+        "calculate": "Berechnen",
+        "optional": "optional",
+        "eggsPerDay": "Eier pro Tag",
+        "country": "Feiertage",
+        "countryNone": "Feiertage nicht abziehen",
+        "region": "Region",
+        "regionNone": "Nur bundesweite Feiertage",
+        "copyLink": "Link zu diesem Ergebnis kopieren",
+        "noscript": "Die Rechner benötigen JavaScript."
+    },
+    "pages": {
+        "eggs": {
+            "title": "Eierrechner",
+            "description": "Wie viele Eier hast du gegessen? Zähle sie, wiege sie und finde heraus, wie viele Hühner du beschäftigst.",
+            "heading": "Wie viele Eier hast du gegessen?",
+            "price": "Preis pro Ei",
+            "age": "Dein Alter"
+        },
+        "work": {
+            "title": "Arbeitstage-Rechner",
+            "description": "Zähle Arbeitstage und Stunden zwischen zwei Daten, abzüglich Feiertagen und freien Tagen — dazu dein Lohn und die Eier, die du bei der Arbeit gegessen hast.",
+            "heading": "Wie viele Tage hast du gearbeitet?",
+            "hours": "Stunden pro Tag",
+            "workdays": "An welchen Tagen arbeitest du?",
+            "vacation": "Genommene Urlaubstage",
+            "sick": "Krankheitstage",
+            "rate": "Stundenlohn"
+        },
+        "timer": {
+            "title": "Eieruhr",
+            "description": "Jedes Mal perfekt gekochte Eier — weich, wachsweich oder hart: eine Eieruhr, die Eigröße, Ausgangstemperatur und Höhe berücksichtigt.",
+            "heading": "Eieruhr",
+            "size": "Eigröße",
+            "sizes": {
+                "S": "S (unter 53 g)",
+                "M": "M (53–63 g)",
+                "L": "L (63–73 g)",
+                "XL": "XL (über 73 g)"
+            },
+            "start": "Das Ei kommt",
+            "fridge": "direkt aus dem Kühlschrank",
+            "room": "mit Zimmertemperatur",
+            "doneness": "Wie magst du es?",
+            "runny": "Weich — flüssiges Eigelb",
+            "soft": "Wachsweich — Eigelb fest, aber weich",
+            "hard": "Hart — festes Eigelb",
+            "altitude": "Höhe in Metern",
+            "hint": "Lege das Ei in kochendes Wasser und starte dann die Uhr.",
+            "startButton": "Start",
+            "pause": "Pause",
+            "resume": "Weiter",
+            "reset": "Zurücksetzen",
+            "source": "Die Zeiten beruhen auf der Formel von Charles D. H. Williams aus „The Physics of Cooking an Egg“."
+        },
+        "age": {
+            "title": "Altersrechner",
+            "description": "Wie alt bist du in Tagen, Stunden und Herzschlägen — und wann ist dein nächster runder Tag?",
+            "heading": "Wie alt bist du wirklich?",
+            "birth": "Dein Geburtsdatum"
+        },
+        "countdown": {
+            "title": "Countdown",
+            "description": "Wie viele Tage, Wochen und Arbeitstage sind es noch bis zum Urlaub, zur Deadline oder zum großen Tag?",
+            "heading": "Wie lange noch bis…",
+            "target": "Der große Tag",
+            "event": "Worauf wartest du?",
+            "eventPlaceholder": "z. B. meinen Urlaub"
+        },
+        "pizza": {
+            "title": "Pizzarechner",
+            "description": "Ist eine große Pizza günstiger als zwei kleine? Vergleiche Pizzen nach Preis pro Fläche.",
+            "heading": "Welche Pizza lohnt sich am meisten?",
+            "pizza": "Pizza {n}",
+            "diameter": "Durchmesser (cm)",
+            "price": "Preis",
+            "quantity": "Anzahl"
+        },
+        "split": {
+            "title": "Rechnung teilen",
+            "description": "Teile Rechnung und Trinkgeld in Sekunden unter Freunden auf.",
+            "heading": "Rechnung teilen",
+            "amount": "Rechnungsbetrag",
+            "tip": "Trinkgeld (%)",
+            "people": "Anzahl Personen",
+            "roundUp": "Jeden Anteil auf einen ganzen Betrag aufrunden"
+        },
+        "about": {
+            "title": "Über",
+            "description": "Über die Eierrechner-Website.",
+            "heading": "Über diese Seite",
+            "intro": "Hallo! Danke für deinen Besuch auf der Eierrechner-Website. Sie begann als Übungsprojekt, um Programmieren zu lernen und Eier zu zählen. Irgendwann wurde daraus eine kleine Sammlung von Alltagsrechnern. Was man nicht alles im Netz findet, oder?",
+            "privacy": "Keine Cookies, kein Tracking, keine Konten. Alles wird in deinem Browser berechnet, und deine letzten Eingaben werden nur auf deinem eigenen Gerät gespeichert. Feiertage stammen von der kostenlosen Nager.Date-API und werden über diesen Server abgerufen, sodass deine Adresse an niemanden sonst weitergegeben wird.",
+            "blog": "Schau dir auch meine Hauptseite an:"
+        }
+    },
+    "client": {
+        "units": {
+            "days": {
+                "one": "{n} Tag",
+                "other": "{n} Tage"
+            },
+            "weeks": {
+                "one": "{n} Woche",
+                "other": "{n} Wochen"
+            },
+            "months": {
+                "one": "{n} Monat",
+                "other": "{n} Monate"
+            },
+            "years": {
+                "one": "{n} Jahr",
+                "other": "{n} Jahre"
+            },
+            "hours": {
+                "one": "{n} Stunde",
+                "other": "{n} Stunden"
+            },
+            "eggs": {
+                "one": "{n} Ei",
+                "other": "{n} Eier"
+            },
+            "hens": {
+                "one": "{n} Huhn",
+                "other": "{n} Hühner"
+            },
+            "cartons": {
+                "one": "{n} Eierkarton",
+                "other": "{n} Eierkartons"
+            },
+            "daysIn": {
+                "one": "{n} Tag",
+                "other": "{n} Tagen"
+            }
+        },
+        "errors": {
+            "invalidDate": "Bitte gib ein gültiges Datum ein.",
+            "endBeforeStart": "Das Enddatum darf nicht vor dem Startdatum liegen.",
+            "rangeTooLong": "Dieser Zeitraum ist zu lang — bitte wähle einen kürzeren.",
+            "invalidNumber": "Bitte überprüfe die eingegebenen Zahlen.",
+            "future": "Dieses Datum liegt in der Zukunft."
+        },
+        "copied": "Link kopiert!",
+        "copyFailed": "Kopieren fehlgeschlagen — der Link steht in der Adresszeile.",
+        "holidays": {
+            "unavailable": "Die Feiertage konnten nicht geladen werden, daher wurden keine abgezogen.",
+            "unsupported": "Feiertage gibt es nur für 1976–2075 und Zeiträume bis zu 10 Jahren, daher wurden keine abgezogen."
+        },
+        "eggs": {
+            "result": "In {days} hast du {eggs} gegessen.",
+            "weight": "Das sind {kg} kg Ei, mit {protein} kg Eiweiß und {kcal} kcal.",
+            "cartons": "Dafür bräuchtest du mindestens {cartons} à zehn Stück.",
+            "stack": "Übereinander gestapelt wären sie {metres} m hoch.",
+            "cost": "Sie haben dich {cost} gekostet.",
+            "hens": "Um mit dir mitzuhalten, braucht es {hens}, die das ganze Jahr legen.",
+            "lifetime": "Bei diesem Tempo isst du bis zum Alter von 80 noch {eggs}."
+        },
+        "work": {
+            "noWorkdays": "Sieht so aus, als hättest du gar nicht gearbeitet!",
+            "worked": "In diesem Zeitraum hast du {days} gearbeitet.",
+            "hours": "Das sind {hours}.",
+            "holidays": "Abgezogene Feiertage an deinen Arbeitstagen: {holidays}.",
+            "eggs": "An diesen Tagen hast du {eggs} gegessen.",
+            "pay": "Du hast {amount} verdient.",
+            "perEgg": "Das sind {amount} pro gegessenem Ei.",
+            "allOff": "Deine freien Tage decken den ganzen Zeitraum ab."
+        },
+        "timer": {
+            "time": "Kochzeit: {time}.",
+            "done": "Fertig! Ab ins kalte Wasser damit.",
+            "running": "{time} · Eieruhr",
+            "invalid": "Bitte wähle alle Optionen und eine Höhe zwischen 0 und 5000 m. Sehr weit oben kocht Wasser nicht heiß genug für ein hartes Ei."
+        },
+        "age": {
+            "exact": "Du bist {years}, {months} und {days} alt.",
+            "total": "Das sind {days} oder {hours}.",
+            "body": "Dein Herz hat etwa {beats} Mal geschlagen, und du hast etwa {breaths} Atemzüge gemacht.",
+            "milestone": "Am {date} wirst du {n} Tage alt, in {days}.",
+            "birthday": "Dein nächster Geburtstag ist in {days}.",
+            "birthdayToday": "Alles Gute zum Geburtstag!"
+        },
+        "countdown": {
+            "leftEvent": "Noch {days} bis {event}.",
+            "left": "Noch {days}.",
+            "weeks": "Das sind {weeks} und {days}.",
+            "workdays": "Verbleibende Arbeitstage, heute mitgezählt (Montag bis Freitag): {workdays}.",
+            "weekends": "Wochenenden bis dahin: {weekends}.",
+            "today": "Es ist heute!",
+            "past": "Das war vor {days}."
+        },
+        "pizza": {
+            "row": "Pizza {n}: {quantity} × {diameter} cm = {area} cm² für {price} — {per100} pro 100 cm².",
+            "best": "Bestes Preis-Leistungs-Verhältnis: Pizza {n}.",
+            "compare": "Eine {big}-cm-Pizza ist so viel Pizza wie {count} Pizzen mit {small} cm.",
+            "empty": "Gib für mindestens eine Pizza Durchmesser und Preis ein."
+        },
+        "split": {
+            "total": "Trinkgeld {tip}, insgesamt {total}.",
+            "share": "Jede Person zahlt {share}.",
+            "extra": "Durch das Aufrunden kommen {extra} zum Trinkgeld hinzu."
+        }
+    }
+}

@@ -1,0 +1,226 @@
+{
+    "meta": {
+        "languageName": "English",
+        "siteName": "eggs#"
+    },
+    "nav": {
+        "main": "Main navigation",
+        "menu": "Menu",
+        "skip": "Skip to content",
+        "language": "Language",
+        "theme": "Toggle dark mode",
+        "eggs": "Eggs",
+        "work": "Working days",
+        "timer": "Egg timer",
+        "age": "Age",
+        "countdown": "Countdown",
+        "pizza": "Pizza",
+        "split": "Split the bill",
+        "about": "About"
+    },
+    "footer": "© {year} An egg counting website • by Seraphim",
+    "common": {
+        "start": "Start of the period",
+        "end": "End of the period",
+        "calculate": "Calculate",
+        "optional": "optional",
+        "eggsPerDay": "Eggs per day",
+        "country": "Public holidays",
+        "countryNone": "Don't subtract holidays",
+        "region": "Region",
+        "regionNone": "Nationwide holidays only",
+        "copyLink": "Copy link to this result",
+        "noscript": "The calculators need JavaScript to work."
+    },
+    "pages": {
+        "eggs": {
+            "title": "Egg calculator",
+            "description": "How many eggs have you eaten? Count them, weigh them and find out how many hens you keep busy.",
+            "heading": "How many eggs did you eat?",
+            "price": "Price per egg",
+            "age": "Your age"
+        },
+        "work": {
+            "title": "Working days calculator",
+            "description": "Count working days and hours between two dates, minus public holidays and days off — plus your pay and the eggs you ate on the job.",
+            "heading": "How many days did you work?",
+            "hours": "Hours per day",
+            "workdays": "Which days do you work?",
+            "vacation": "Vacation days taken",
+            "sick": "Sick days",
+            "rate": "Hourly rate"
+        },
+        "timer": {
+            "title": "Boiled egg timer",
+            "description": "Perfect soft, medium or hard boiled eggs every time: a timer that accounts for egg size, starting temperature and altitude.",
+            "heading": "Boiled egg timer",
+            "size": "Egg size",
+            "sizes": {
+                "S": "S (under 53 g)",
+                "M": "M (53–63 g)",
+                "L": "L (63–73 g)",
+                "XL": "XL (over 73 g)"
+            },
+            "start": "The egg comes",
+            "fridge": "straight from the fridge",
+            "room": "at room temperature",
+            "doneness": "How do you like it?",
+            "runny": "Runny — liquid yolk",
+            "soft": "Soft — yolk set but soft",
+            "hard": "Hard — firm yolk",
+            "altitude": "Altitude in metres",
+            "hint": "Lower the egg into boiling water, then start the timer.",
+            "startButton": "Start",
+            "pause": "Pause",
+            "resume": "Resume",
+            "reset": "Reset",
+            "source": "Times use Charles D. H. Williams' formula from “The Physics of Cooking an Egg”."
+        },
+        "age": {
+            "title": "Age calculator",
+            "description": "How old are you in days, hours and heartbeats — and when is your next big round day?",
+            "heading": "How old are you, really?",
+            "birth": "Your date of birth"
+        },
+        "countdown": {
+            "title": "Countdown",
+            "description": "How many days, weeks and working days are left until your vacation, deadline or big day?",
+            "heading": "How long until…",
+            "target": "The big day",
+            "event": "What are you waiting for?",
+            "eventPlaceholder": "e.g. my vacation"
+        },
+        "pizza": {
+            "title": "Pizza calculator",
+            "description": "Is one big pizza better value than two small ones? Compare pizzas by price per area.",
+            "heading": "Which pizza is the best deal?",
+            "pizza": "Pizza {n}",
+            "diameter": "Diameter (cm)",
+            "price": "Price",
+            "quantity": "How many"
+        },
+        "split": {
+            "title": "Bill splitter",
+            "description": "Split the bill and the tip between friends in seconds.",
+            "heading": "Split the bill",
+            "amount": "Bill amount",
+            "tip": "Tip (%)",
+            "people": "Number of people",
+            "roundUp": "Round each share up to a whole amount"
+        },
+        "about": {
+            "title": "About",
+            "description": "About the egg calculator website.",
+            "heading": "About",
+            "intro": "Hey! Thanks for visiting the egg calculator website. It started as a practice website for learning to code and counting eggs. At some point, it turned into a small collection of everyday calculators. What can't you find on the web, am I right?",
+            "privacy": "No cookies, no tracking, no accounts. Everything is calculated in your browser, and your last inputs are only remembered on your own device. Public holidays come from the free Nager.Date API through this server, so your address is never shared with anyone else.",
+            "blog": "Check out my main website:"
+        }
+    },
+    "client": {
+        "units": {
+            "days": {
+                "one": "{n} day",
+                "other": "{n} days"
+            },
+            "weeks": {
+                "one": "{n} week",
+                "other": "{n} weeks"
+            },
+            "months": {
+                "one": "{n} month",
+                "other": "{n} months"
+            },
+            "years": {
+                "one": "{n} year",
+                "other": "{n} years"
+            },
+            "hours": {
+                "one": "{n} hour",
+                "other": "{n} hours"
+            },
+            "eggs": {
+                "one": "{n} egg",
+                "other": "{n} eggs"
+            },
+            "hens": {
+                "one": "{n} hen",
+                "other": "{n} hens"
+            },
+            "cartons": {
+                "one": "{n} carton",
+                "other": "{n} cartons"
+            },
+            "daysIn": {
+                "one": "{n} day",
+                "other": "{n} days"
+            }
+        },
+        "errors": {
+            "invalidDate": "Please enter a valid date.",
+            "endBeforeStart": "The end date can't be before the start date.",
+            "rangeTooLong": "That period is too long — please pick a shorter one.",
+            "invalidNumber": "Please check the numbers you entered.",
+            "future": "That date is in the future."
+        },
+        "copied": "Link copied!",
+        "copyFailed": "Couldn't copy — the link is in your address bar.",
+        "holidays": {
+            "unavailable": "Public holidays couldn't be loaded, so none were subtracted.",
+            "unsupported": "Public holidays are only available for 1976–2075 and periods of up to 10 years, so none were subtracted."
+        },
+        "eggs": {
+            "result": "In {days} you have eaten {eggs}.",
+            "weight": "That's {kg} kg of egg, with {protein} kg of protein and {kcal} kcal.",
+            "cartons": "You'd need at least {cartons} of ten for that.",
+            "stack": "Stacked on top of each other, they would be {metres} m tall.",
+            "cost": "They cost you {cost}.",
+            "hens": "To keep up with you it takes {hens}, laying all year.",
+            "lifetime": "At this rate you will eat another {eggs} by the age of 80."
+        },
+        "work": {
+            "noWorkdays": "Seems like you did not work at all!",
+            "worked": "In this period you worked {days}.",
+            "hours": "That makes {hours}.",
+            "holidays": "Public holidays on your working days, subtracted: {holidays}.",
+            "eggs": "In those days you have eaten {eggs}.",
+            "pay": "You earned {amount}.",
+            "perEgg": "That's {amount} per egg eaten.",
+            "allOff": "Your days off cover the whole period."
+        },
+        "timer": {
+            "time": "Boil for {time}.",
+            "done": "Done! Into cold water with it.",
+            "running": "{time} · egg timer",
+            "invalid": "Please choose all options and an altitude between 0 and 5000 m. Very high up, water doesn't boil hot enough for a hard egg."
+        },
+        "age": {
+            "exact": "You are {years}, {months} and {days} old.",
+            "total": "That's {days}, or {hours}.",
+            "body": "Your heart has beaten about {beats} times, and you have taken about {breaths} breaths.",
+            "milestone": "You will be {n} days old on {date}, in {days}.",
+            "birthday": "Your next birthday is in {days}.",
+            "birthdayToday": "Happy birthday!"
+        },
+        "countdown": {
+            "leftEvent": "{days} left until {event}.",
+            "left": "{days} left.",
+            "weeks": "That's {weeks} and {days}.",
+            "workdays": "Working days left, counting today (Monday to Friday): {workdays}.",
+            "weekends": "Weekends to enjoy before then: {weekends}.",
+            "today": "It's today!",
+            "past": "That was {days} ago."
+        },
+        "pizza": {
+            "row": "Pizza {n}: {quantity} × {diameter} cm = {area} cm² for {price} — {per100} per 100 cm².",
+            "best": "Best value: pizza {n}.",
+            "compare": "One {big} cm pizza is as much pizza as {count} pizzas of {small} cm.",
+            "empty": "Enter a diameter and a price for at least one pizza."
+        },
+        "split": {
+            "total": "Tip {tip}, total {total}.",
+            "share": "Each person pays {share}.",
+            "extra": "Rounding up adds {extra} to the tip."
+        }
+    }
+}

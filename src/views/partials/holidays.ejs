@@ -1,0 +1,14 @@
+<div class="field-row" data-holidays>
+    <div class="field">
+        <label for="country"><%= t("common.country") %> <%- include("optional") %></label>
+        <select id="country" name="country">
+            <option value=""><%= t("common.countryNone") %></option>
+        </select>
+    </div>
+    <div class="field" data-region-field hidden>
+        <label for="region"><%= t("common.region") %></label>
+        <select id="region" name="region">
+            <option value=""><%= t("common.regionNone") %></option>
+        </select>
+    </div>
+</div>

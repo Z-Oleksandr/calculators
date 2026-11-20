@@ -1,0 +1,13 @@
+<section class="card">
+    <h1><%= t("pages.age.heading") %></h1>
+    <form id="calc" class="calc">
+        <div class="field-row">
+            <div class="field">
+                <label for="birth"><%= t("pages.age.birth") %></label>
+                <input type="date" id="birth" name="birth" required min="1900-01-01" />
+            </div>
+        </div>
+        <button type="submit" class="btn"><%= t("common.calculate") %></button>
+    </form>
+    <%- include("partials/result") %>
+</section>

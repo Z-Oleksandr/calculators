@@ -1,0 +1,55 @@
+<section class="card">
+    <h1><%= t("pages.timer.heading") %></h1>
+    <form id="calc" class="calc">
+        <div class="field-row">
+            <div class="field">
+                <label for="size"><%= t("pages.timer.size") %></label>
+                <select id="size" name="size">
+                    <% ["S", "M", "L", "XL"].forEach((size) => { %>
+                    <option value="<%= size %>"<% if (size === "M") { %> selected<% } %>><%= t("pages.timer.sizes." + size) %></option>
+                    <% }) %>
+                </select>
+            </div>
+            <div class="field">
+                <label for="altitude"><%= t("pages.timer.altitude") %></label>
+                <input type="number" id="altitude" name="altitude" min="0" max="5000" step="1" value="0" required inputmode="numeric" />
+            </div>
+        </div>
+        <div class="field-row">
+            <fieldset class="choices">
+                <legend><%= t("pages.timer.start") %></legend>
+                <% ["fridge", "room"].forEach((value) => { %>
+                <label class="check">
+                    <input type="radio" name="start" value="<%= value %>"<% if (value === "fridge") { %> checked<% } %> />
+                    <span><%= t("pages.timer." + value) %></span>
+                </label>
+                <% }) %>
+            </fieldset>
+            <fieldset class="choices">
+                <legend><%= t("pages.timer.doneness") %></legend>
+                <% ["runny", "soft", "hard"].forEach((value) => { %>
+                <label class="check">
+                    <input type="radio" name="doneness" value="<%= value %>"<% if (value === "soft") { %> checked<% } %> />
+                    <span><%= t("pages.timer." + value) %></span>
+                </label>
+                <% }) %>
+            </fieldset>
+        </div>
+    </form>
+    <p class="note"><%= t("pages.timer.hint") %></p>
+    <div class="timer">
+        <div id="clock" class="clock" role="timer" aria-live="off">0:00</div>
+        <progress id="progress" max="1" value="0"></progress>
+        <div class="timer-buttons">
+            <button type="button" class="btn" id="timer-start"><%= t("pages.timer.startButton") %></button>
+            <button type="button" class="btn btn-quiet" id="timer-reset" disabled><%= t("pages.timer.reset") %></button>
+        </div>
+        <template id="timer-labels">
+            <span data-key="start"><%= t("pages.timer.startButton") %></span>
+            <span data-key="pause"><%= t("pages.timer.pause") %></span>
+            <span data-key="resume"><%= t("pages.timer.resume") %></span>
+        </template>
+    </div>
+    <%- include("partials/result") %>
+    <p class="note small"><%= t("pages.timer.source") %></p>
+</section>

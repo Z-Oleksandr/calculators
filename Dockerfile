@@ -32,6 +32,8 @@ COPY --from=deps  /app/node_modules ./node_modules
 COPY --from=build /app/dist ./dist
 COPY package.json app.js ./
 COPY public ./public
+COPY src/server ./src/server
+COPY src/locales ./src/locales
 COPY src/views ./src/views
 
 USER node
