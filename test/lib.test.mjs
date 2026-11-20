@@ -123,31 +123,39 @@ test("egg stats", () => {
     assert.equal(eggs.lifetimeEggs(1, 79), 365);
 });
 
-test("boil times are sensible and ordered", () => {
+test("boil times match the calibration and react to inputs", () => {
     const base = { size: "M", start: "fridge", altitude: 0 };
+    const runny = timer.boilSeconds({ ...base, doneness: "runny" });
     const soft = timer.boilSeconds({ ...base, doneness: "soft" });
-    const medium = timer.boilSeconds({ ...base, doneness: "medium" });
     const hard = timer.boilSeconds({ ...base, doneness: "hard" });
-    assert.ok(soft > 240 && soft < 360, `soft=${soft}`);
-    assert.ok(soft < medium && medium < hard);
+    assert.ok(Math.abs(runny - 360) <= 10, `runny=${runny}`);
+    assert.ok(Math.abs(soft - 420) <= 10, `soft=${soft}`);
+    assert.ok(Math.abs(hard - 600) <= 10, `hard=${hard}`);
     assert.ok(
         timer.boilSeconds({ ...base, doneness: "soft", start: "room" }) < soft,
+    );
+    assert.ok(
+        timer.boilSeconds({ ...base, doneness: "soft", size: "XL" }) > soft,
     );
     assert.ok(
         timer.boilSeconds({ ...base, doneness: "soft", altitude: 2000 }) > soft,
     );
     assert.ok(
-        timer.boilSeconds({ ...base, doneness: "hard", altitude: 5000 }) > hard,
+        timer.boilSeconds({ ...base, doneness: "soft", altitude: 5000 }) > soft,
     );
     assert.equal(
-        timer.boilSeconds({ ...base, doneness: "hard", altitude: 5001 }),
+        timer.boilSeconds({ ...base, doneness: "hard", altitude: 5000 }),
         null,
     );
-    assert.equal(timer.boilSeconds({ ...base, doneness: "nope" }), null);
+    assert.equal(
+        timer.boilSeconds({ ...base, doneness: "soft", altitude: 5001 }),
+        null,
+    );
     assert.equal(
         timer.boilSeconds({ ...base, doneness: "soft", altitude: -1 }),
         null,
     );
+    assert.equal(timer.boilSeconds({ ...base, doneness: "nope" }), null);
     assert.equal(timer.formatClock(425), "7:05");
     assert.equal(timer.formatClock(-3), "0:00");
 });

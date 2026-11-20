@@ -9,7 +9,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3032
-      SITE_URL: ${SITE_URL:-}
+      SITE_URL: https://eggs.sbmedia.dev
     restart: unless-stopped
     read_only: true
     tmpfs:

@@ -27,9 +27,9 @@
             </fieldset>
             <fieldset class="choices">
                 <legend><%= t("pages.timer.doneness") %></legend>
-                <% ["soft", "medium", "hard"].forEach((value) => { %>
+                <% ["runny", "soft", "hard"].forEach((value) => { %>
                 <label class="check">
-                    <input type="radio" name="doneness" value="<%= value %>"<% if (value === "medium") { %> checked<% } %> />
+                    <input type="radio" name="doneness" value="<%= value %>"<% if (value === "soft") { %> checked<% } %> />
                     <span><%= t("pages.timer." + value) %></span>
                 </label>
                 <% }) %>

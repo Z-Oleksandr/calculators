@@ -65,8 +65,8 @@
             "fridge": "direkt aus dem Kühlschrank",
             "room": "mit Zimmertemperatur",
             "doneness": "Wie magst du es?",
-            "soft": "Weich — flüssiges Eigelb",
-            "medium": "Wachsweich — cremiges Eigelb",
+            "runny": "Weich — flüssiges Eigelb",
+            "soft": "Wachsweich — Eigelb fest, aber weich",
             "hard": "Hart — festes Eigelb",
             "altitude": "Höhe in Metern",
             "hint": "Lege das Ei in kochendes Wasser und starte dann die Uhr.",
@@ -192,7 +192,7 @@
             "time": "Kochzeit: {time}.",
             "done": "Fertig! Ab ins kalte Wasser damit.",
             "running": "{time} · Eieruhr",
-            "invalid": "Bitte wähle alle Optionen und eine Höhe zwischen 0 und 5000 m."
+            "invalid": "Bitte wähle alle Optionen und eine Höhe zwischen 0 und 5000 m. Sehr weit oben kocht Wasser nicht heiß genug für ein hartes Ei."
         },
         "age": {
             "exact": "Du bist {years}, {months} und {days} alt.",

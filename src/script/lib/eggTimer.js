@@ -2,11 +2,13 @@
  * Boiling time after Charles D. H. Williams, "The Physics of Cooking an Egg":
  * t[min] = 0.451 * M^(2/3) * ln(0.76 * (Tegg - Twater) / (Tyolk - Twater))
  * with M the egg mass in grams and temperatures in degrees Celsius.
+ * The target yolk temperatures are calibrated so a medium egg from the fridge
+ * at sea level takes 6, 7 and 10 minutes for runny, soft and hard.
  */
 
 export const EGG_SIZES = Object.freeze({ S: 48, M: 58, L: 68, XL: 78 });
 export const START_TEMPS = Object.freeze({ fridge: 4, room: 20 });
-export const DONENESS = Object.freeze({ soft: 64, medium: 70, hard: 80 });
+export const DONENESS = Object.freeze({ runny: 70, soft: 74, hard: 83.5 });
 export const MAX_ALTITUDE_M = 5000;
 
 /** Approximate boiling point of water in degrees Celsius at `altitudeM` metres. */
@@ -14,9 +16,12 @@ export function boilingPoint(altitudeM) {
     return 100 - altitudeM / 300;
 }
 
+const MIN_WATER_MARGIN = 1;
+
 /**
  * @param {{size: string, start: string, doneness: string, altitude?: number}} input
- * @returns {number|null} whole seconds, or null for invalid input
+ * @returns {number|null} whole seconds, or null for invalid input or when the
+ * water does not boil hot enough at that altitude
  */
 export function boilSeconds({ size, start, doneness, altitude = 0 }) {
     const mass = EGG_SIZES[size];
@@ -31,6 +36,7 @@ export function boilSeconds({ size, start, doneness, altitude = 0 }) {
         return null;
     }
     const tWater = boilingPoint(altitude);
+    if (tWater - tYolk < MIN_WATER_MARGIN) return null;
     const minutes =
         0.451 *
         Math.cbrt(mass * mass) *

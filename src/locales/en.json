@@ -65,8 +65,8 @@
             "fridge": "straight from the fridge",
             "room": "at room temperature",
             "doneness": "How do you like it?",
-            "soft": "Soft — runny yolk",
-            "medium": "Medium — jammy yolk",
+            "runny": "Runny — liquid yolk",
+            "soft": "Soft — yolk set but soft",
             "hard": "Hard — firm yolk",
             "altitude": "Altitude in metres",
             "hint": "Lower the egg into boiling water, then start the timer.",
@@ -192,7 +192,7 @@
             "time": "Boil for {time}.",
             "done": "Done! Into cold water with it.",
             "running": "{time} · egg timer",
-            "invalid": "Please choose all options and an altitude between 0 and 5000 m."
+            "invalid": "Please choose all options and an altitude between 0 and 5000 m. Very high up, water doesn't boil hot enough for a hard egg."
         },
         "age": {
             "exact": "You are {years}, {months} and {days} old.",
