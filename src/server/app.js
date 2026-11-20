@@ -135,8 +135,10 @@ function createApp({
                     "style-src": ["'self'"],
                     "font-src": ["'self'"],
                     "img-src": ["'self'", "data:"],
+                    "upgrade-insecure-requests": production ? [] : null,
                 },
             },
+            strictTransportSecurity: production,
         }),
     );
     app.use((req, res, next) => {

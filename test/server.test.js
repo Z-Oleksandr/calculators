@@ -199,6 +199,21 @@ describe("http app", () => {
         assert.match(csp, /style-src 'self';/);
         assert.equal(res.headers.get("x-powered-by"), null);
         assert.match(res.headers.get("permissions-policy"), /camera=\(\)/);
+        assert.match(csp, /upgrade-insecure-requests/);
+        assert.ok(res.headers.get("strict-transport-security"));
+    });
+
+    test("development serves plain http without forcing https", async () => {
+        const dev = createApp({ production: false }).listen(0);
+        await new Promise((resolve) => dev.once("listening", resolve));
+        try {
+            const res = await fetch(`http://127.0.0.1:${dev.address().port}/`);
+            const csp = res.headers.get("content-security-policy");
+            assert.doesNotMatch(csp, /upgrade-insecure-requests/);
+            assert.equal(res.headers.get("strict-transport-security"), null);
+        } finally {
+            await new Promise((resolve) => dev.close(resolve));
+        }
     });
 
     test("holiday api validates and returns json", async () => {
